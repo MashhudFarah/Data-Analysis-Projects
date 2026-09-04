@@ -15,7 +15,7 @@ This project cleans 12,000+ rows of raw transaction data, merges advertising spe
 1. **Excel Dashboard (Client Deliverable)**  
    - `Sales_Dashboard_Polished.xlsx` – a fully formatted workbook with:
      - **5 PivotCharts**: Revenue by Category & Status, Revenue by Country, Revenue by Payment Method, Monthly Revenue Trend, ROAS by Category.
-     - **5 Slicers**: Filter by Product Category, Country, Payment Method, and Revenue Type (Fulfilled vs. Cancelled).
+     - **4 Slicers**: Filter by Product Category, Country, Payment Method, and Revenue Type (Fulfilled vs. Cancelled).
      - **Dark Theme**: Professional black background with white text, optimized for client presentations.
    - *Just open the file and start filtering – no setup required.*
 
@@ -31,3 +31,15 @@ This project cleans 12,000+ rows of raw transaction data, merges advertising spe
 - **Profit After Ads** ($760K)
 
 ## 📁 Project Structure
+Data-Analysis-Projects/
+├── clean_data_script.py          # Step 1: clean messy_data.csv → clean_data.xlsx
+├── build_dashboard.py            # Step 2: read clean_data.xlsx + ad_spend.csv → dashboard.xlsx
+├── app.py                        # Streamlit web app (interactive hosted version)
+├── messy_data.csv                # Raw source data (12,180+ rows)
+├── ad_spend.csv                  # Ad spend by category and date
+├── requirements.txt              # Python dependencies (pandas, openpyxl, streamlit)
+├── .gitignore                    # Ignore venv, __pycache__, generated .xlsx files
+├── README.md                     # Project overview, setup, usage, and deliverables
+├── dashboard.xlsx                # 🔧 Generated intermediate (ignored by Git)
+├── clean_data.xlsx               # 🔧 Generated intermediate (ignored by Git)
+└── Sales_Dashboard_Polished.xlsx # 🏆 Final polished dashboard (tracked – add it!)
