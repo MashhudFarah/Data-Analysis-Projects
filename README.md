@@ -38,19 +38,21 @@ Run `streamlit run app.py` locally to get the same insights in a web interface w
 ---
 
 ## 📁 Project Structure
+
+```bash
 Data-Analysis-Projects/
-├── 📄 clean_data_script.py # Step 1: Clean messy_data.csv → clean_data.xlsx
-├── 📄 build_dashboard.py # Step 2: Read clean data + ad_spend → dashboard.xlsx
-├── 📄 app.py # Streamlit web app (interactive version)
+├── README.md                      # Project documentation (this file)
+├── requirements.txt               # Python dependencies
 │
-├── 📊 messy_data.csv # Raw source data (12,180+ rows)
-├── 📊 ad_spend.csv # Raw ad spend by category & date
-├── 📄 requirements.txt # Python dependencies
-├── 📄 .gitignore # Ignore venv, pycache, generated .xlsx
-├── 📄 README.md # This file
+├── 📊 ad_spend.csv                # Source: daily ad spend by category
+├── 📊 messy_data.csv              # Source: raw e-commerce transactions
 │
-├── 🔧 clean_data.xlsx # Generated intermediate (ignored by Git)
-├── 🔧 dashboard.xlsx # Generated intermediate (ignored by Git)
+├── 📄 clean_data_script.py        # Step 1: Clean messy_data.csv → clean_data.xlsx
+├── 📄 build_dashboard.py          # Step 2: Build Excel data source (dashboard.xlsx)
+├── 📄 app.py                      # Streamlit web app (interactive version)
 │
-└── 🏆 Sales_Dashboard_Polished.xlsx # Final client-ready dashboard (tracked)
+├── 🔧 clean_data.xlsx             # 👈 Generated intermediate (ignored by Git)
+├── 🔧 dashboard.xlsx              # 👈 Generated intermediate (ignored by Git)
+│
+└── 🏆 Sales_Dashboard_Polished.xlsx # 👈 Client-ready deliverable (tracked)
 
