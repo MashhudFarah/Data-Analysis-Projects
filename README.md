@@ -15,7 +15,7 @@ This project takes 12,000+ rows of raw e‑commerce transactions and advertising
 ### 🔧 Two Delivery Formats
 
 **1. Excel Dashboard (Primary Deliverable)**  
-`Sales_Dashboard_Polished.xlsx` – a fully formatted workbook with:
+`dashboard.xlsx` – a fully formatted workbook with:
 - **5 PivotCharts**: Revenue by Category & Status, Revenue by Country, Revenue by Payment Method, Monthly Revenue Trend, ROAS by Category.
 - **4 Slicers**: Filter by Product Category, Country, Payment Method, and Revenue Type (Fulfilled vs. Cancelled).
 - **Dark Theme**: Professional black background with white text, optimised for live client demos.
@@ -68,11 +68,10 @@ Data-Analysis-Projects/
 ├── 📊 messy_data.csv              # Source: raw e-commerce transactions
 │
 ├── 📄 clean_data_script.py        # Step 1: Clean messy_data.csv → clean_data.xlsx
-├── 📄 build_dashboard.py          # Step 2: Build Excel data source (dashboard.xlsx)
+├── 📄 build_dashboard.py          # Step 2: Build Excel data source (dashboard_data_source.xlsx)
 ├── 📄 app.py                      # Streamlit web app (interactive version)
 │
-├── 🔧 clean_data.xlsx             # 👈 Generated intermediate (ignored by Git)
-├── 🔧 dashboard.xlsx              # 👈 Generated intermediate (ignored by Git)
+├── 🔧 clean_data.xlsx             # 👈 Generated intermediate
 │
 └── 🏆 Sales_Dashboard_Polished.xlsx # 👈 Client-ready deliverable (tracked)
 
