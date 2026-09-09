@@ -13,9 +13,9 @@ from openpyxl.utils import get_column_letter
 BASE_DIR = Path(__file__).resolve().parent
 
 # Internal preprocessing file used to build the final client workbook.
-# This is not part of the client deliverable; dashboard.xlsx is the only Excel file that should be shared externally.
+# This is not part of the client deliverable; dashboard_data_source.xlsx is the only Excel file that should be shared externally.
 CLEAN_XLSX = BASE_DIR / 'clean_data.xlsx'
-OUTPUT_XLSX = BASE_DIR / 'dashboard.xlsx'
+OUTPUT_XLSX = BASE_DIR / 'dashboard_data_source.xlsx'
 AD_SPEND_CSV = BASE_DIR / 'ad_spend.csv'
 
 
