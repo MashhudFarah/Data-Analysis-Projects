@@ -10,19 +10,19 @@ A complete data analytics project that turns messy e-commerce transaction data i
 
 ## 🚀 What It Does
 
-This project takes 12,000+ rows of raw e‑commerce transactions and advertising spend data, cleans them, calculates key business metrics, and exports **two interactive dashboards** – one in Excel (client‑friendly) and one as a web app (technical).
+This project takes 12,000+ rows of raw e‑commerce transactions and advertising spend data, cleans them, calculates key business metrics, and delivers **two interactive dashboards** – one in Excel (manually polished with slicers and dark theme) and one as a web app (Streamlit).
 
-### 🔧 Two Delivery Formats
+### 📊 Two Delivery Formats
 
-**1. Excel Dashboard (Primary Deliverable)**  
+**1. Excel Dashboard (Showcase)**  
 `dashboard.xlsx` – a fully formatted workbook with:
 - **5 PivotCharts**: Revenue by Category & Status, Revenue by Country, Revenue by Payment Method, Monthly Revenue Trend, ROAS by Category.
 - **4 Slicers**: Filter by Product Category, Country, Payment Method, and Revenue Type (Fulfilled vs. Cancelled).
 - **Dark Theme**: Professional black background with white text, optimised for live client demos.
 - *Just open the file and start filtering – no setup required.*
 
-**2. Streamlit Web App (Interactive Hosted Version)**  
-Run `streamlit run app.py` locally to get the same insights in a web interface with sidebar filters – ideal for quick internal exploration.
+**2. Streamlit Web App (Interactive)**  
+Run `streamlit run app.py` locally to explore the same insights in a web interface with sidebar filters – ideal for quick internal exploration.
 
 ### 📊 Key Metrics Calculated
 
@@ -37,15 +37,16 @@ Run `streamlit run app.py` locally to get the same insights in a web interface w
 
 ## 📸 Dashboard Preview
 
+*Excel Dashboard:*
+
 <img width="1269" height="345" alt="Screenshot_2026-09-09_11-11-52" src="https://github.com/user-attachments/assets/157052c6-5a6c-44dc-9d83-1e5bcc269054" />
 <img width="1295" height="356" alt="Screenshot_2026-09-09_11-12-21" src="https://github.com/user-attachments/assets/9725c97a-3295-4523-903f-47f187491d28" />
 <img width="1302" height="411" alt="Screenshot_2026-09-09_11-12-40" src="https://github.com/user-attachments/assets/bf2b3ef8-e715-4c02-865a-a43230251526" />
 <img width="1249" height="383" alt="Screenshot_2026-09-09_11-12-59" src="https://github.com/user-attachments/assets/719a5564-26c2-4675-9352-11bdab628b0f" />
 <img width="1237" height="409" alt="Screenshot_2026-09-09_11-13-22" src="https://github.com/user-attachments/assets/1b788724-560b-4bd5-a17d-633ca479ff20" />
 <img width="1278" height="343" alt="Screenshot_2026-09-09_11-13-47" src="https://github.com/user-attachments/assets/6c75ae21-3a44-4464-b4ee-b9d48a798d38" />
-<img width="751" height="499" alt="Screenshot_2026-09-09_11-20-06" src="https://github.com/user-attachments/assets/a59d3440-2916-4745-9aa6-0a66575c3a5f" />
 
-### Streamlit Web App
+*Streamlit Web App:*
 
 <img width="1004" height="410" alt="Screenshot_2026-09-09_12-24-49" src="https://github.com/user-attachments/assets/b8dae8c2-66a3-4c71-9965-f71e61aee2ce" />
 <img width="1011" height="461" alt="Screenshot_2026-09-09_12-25-04" src="https://github.com/user-attachments/assets/f00e89be-f026-41cc-ba4d-3557cbaf4a63" />
@@ -54,14 +55,13 @@ Run `streamlit run app.py` locally to get the same insights in a web interface w
 <img width="967" height="430" alt="Screenshot_2026-09-09_12-25-53" src="https://github.com/user-attachments/assets/cedc0dd1-9b31-4278-8985-5bc383d30627" />
 <img width="970" height="466" alt="Screenshot_2026-09-09_12-25-59" src="https://github.com/user-attachments/assets/b40719f9-d168-44a2-ac93-723280e0c61e" />
 
-
 ---
 
 ## 📁 Project Structure
 
 ```bash
 Data-Analysis-Projects/
-├── README.md                      # Project documentation (this file)
+├── README.md                      # Project documentation
 ├── requirements.txt               # Python dependencies
 │
 ├── 📊 ad_spend.csv                # Source: daily ad spend by category
@@ -71,7 +71,6 @@ Data-Analysis-Projects/
 ├── 📄 build_dashboard.py          # Step 2: Build Excel data source (dashboard_data_source.xlsx)
 ├── 📄 app.py                      # Streamlit web app (interactive version)
 │
-├── 🔧 clean_data.xlsx             # 👈 Generated intermediate
+├── 🔧 clean_data.xlsx             # Generated intermediate (kept for reference)
 │
-└── 🏆 Sales_Dashboard_Polished.xlsx # 👈 Client-ready deliverable (tracked)
-
+└── 🏆 dashboard.xlsx              # Final polished Excel dashboard (showcase)
