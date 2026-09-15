@@ -35,25 +35,87 @@ Run `streamlit run app.py` locally to explore the same insights in a web interfa
 | **Overall ROAS** | 2.94x |
 | **Profit After Ads** | $760K |
 
+---
+
 ## 📸 Dashboard Preview
 
-*Excel Dashboard:*
+### Excel Dashboard
 
-Screenshots/Screenshot_2026-09-09_11-11-52.png
-<img width="1295" height="356" alt="Screenshot_2026-09-09_11-12-21" src="https://github.com/user-attachments/assets/9725c97a-3295-4523-903f-47f187491d28" />
-<img width="1302" height="411" alt="Screenshot_2026-09-09_11-12-40" src="https://github.com/user-attachments/assets/bf2b3ef8-e715-4c02-865a-a43230251526" />
-<img width="1249" height="383" alt="Screenshot_2026-09-09_11-12-59" src="https://github.com/user-attachments/assets/719a5564-26c2-4675-9352-11bdab628b0f" />
-<img width="1237" height="409" alt="Screenshot_2026-09-09_11-13-22" src="https://github.com/user-attachments/assets/1b788724-560b-4bd5-a17d-633ca479ff20" />
-<img width="1278" height="343" alt="Screenshot_2026-09-09_11-13-47" src="https://github.com/user-attachments/assets/6c75ae21-3a44-4464-b4ee-b9d48a798d38" />
+| KPI Cards | Slicers |
+|---|---|
+| ![Excel KPI cards](screenshots/excel/01-kpi-cards.png) | ![Excel slicers](screenshots/excel/02-slicers.png) |
 
-*Streamlit Web App:*
+| Monthly Revenue Trend | ROAS by Category |
+|---|---|
+| ![Excel monthly revenue trend](screenshots/excel/03-monthly-revenue-trend.png) | ![Excel ROAS by category](screenshots/excel/04-roas-by-category.png) |
 
-<img width="1004" height="410" alt="Screenshot_2026-09-09_12-24-49" src="https://github.com/user-attachments/assets/b8dae8c2-66a3-4c71-9965-f71e61aee2ce" />
-<img width="1011" height="461" alt="Screenshot_2026-09-09_12-25-04" src="https://github.com/user-attachments/assets/f00e89be-f026-41cc-ba4d-3557cbaf4a63" />
-<img width="995" height="430" alt="Screenshot_2026-09-09_12-25-19" src="https://github.com/user-attachments/assets/83b78e14-ccca-46df-9a4f-b34b5b2ca2cd" />
-<img width="288" height="623" alt="Screenshot_2026-09-09_12-25-43" src="https://github.com/user-attachments/assets/59500a79-646b-4c42-a992-10b228dd37ae" />
-<img width="967" height="430" alt="Screenshot_2026-09-09_12-25-53" src="https://github.com/user-attachments/assets/cedc0dd1-9b31-4278-8985-5bc383d30627" />
-<img width="970" height="466" alt="Screenshot_2026-09-09_12-25-59" src="https://github.com/user-attachments/assets/b40719f9-d168-44a2-ac93-723280e0c61e" />
+| Revenue by Payment Method | Revenue by Country |
+|---|---|
+| ![Excel revenue by payment method](screenshots/excel/05-revenue-by-payment-method.png) | ![Excel revenue by country](screenshots/excel/06-revenue-by-country.png) |
+
+| Revenue by Category & Status |
+|---|
+| ![Excel revenue by category and status](screenshots/excel/07-revenue-by-category-status.png) |
+
+### Streamlit Web App
+
+| Header & KPIs | Filters Sidebar |
+|---|---|
+| ![Streamlit header KPIs](screenshots/webapp/01-header-kpis.png) | ![Streamlit filters sidebar](screenshots/webapp/02-filters-sidebar.png) |
+
+| Monthly Revenue Trend | Revenue by Category & Country |
+|---|---|
+| ![Streamlit monthly revenue trend](screenshots/webapp/03-monthly-revenue-trend.png) | ![Streamlit revenue by category and country](screenshots/webapp/04-revenue-by-category-country.png) |
+
+| Revenue by Payment Method | ROAS by Category |
+|---|---|
+| ![Streamlit revenue by payment method](screenshots/webapp/05-revenue-by-payment-method.png) | ![Streamlit ROAS by category](screenshots/webapp/06-roas-by-category.png) |
+
+| Data Table Preview |
+|---|
+| ![Streamlit data table preview](screenshots/webapp/07-data-table-preview.png) |
+
+### Data Cleaning — Before & After
+
+| Before | After |
+|---|---|
+| ![Messy raw data](screenshots/excel/08-cleaning-before.png) | ![Cleaned data](screenshots/excel/09-cleaning-after.png) |
+
+---
+
+## 🧼 The Cleaning Problem
+
+The raw export arrives inconsistent — the kind of file that breaks naive group-bys. The cleaning layer normalizes:
+
+- **Payment methods** — `Net Banking`, `NetBanking`, `net banking` → one canonical value. Same for `5 Debit Card`, `5 debit card`, `DEBIT CARD` → `Debit Card`.
+- **Countries** — `USA`, `U.S.A`, `United States`, `usa` → `USA`. Same for `UK` / `U.K.` / `United Kingdom`.
+- **Order status** — mapped into two reporting buckets: `Fulfilled` and `Cancelled/Returned`.
+- **Derived columns** — `Revenue` per line, and a `Month` period key for time-series aggregation.
+
+---
+
+## 🛠️ Setup & Reproduce
+
+```bash
+git clone https://github.com/MashhudFarah/Data-Analysis-Projects.git
+cd Data-Analysis-Projects
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Step 1 — clean the raw transactions → produces clean_data.xlsx
+python clean_data_script.py
+
+# Step 2 — build the Excel deliverable → produces dashboard.xlsx
+python build_dashboard.py
+
+# Step 3 — launch the interactive web app
+streamlit run app.py
+```
+
+**Requirements:** Python 3.9+, `pandas`, `openpyxl`, `streamlit`, `plotly` (see `requirements.txt`).
+
+Steps 2 and 3 both read from `clean_data.xlsx`, so **step 1 must run first**.
 
 ---
 
@@ -62,15 +124,35 @@ Screenshots/Screenshot_2026-09-09_11-11-52.png
 ```bash
 Data-Analysis-Projects/
 ├── README.md                      # Project documentation
+├── LICENSE                        # MIT
+├── .gitignore                     # Excludes clean_data.xlsx and caches
 ├── requirements.txt               # Python dependencies
 │
 ├── 📊 ad_spend.csv                # Source: daily ad spend by category
 ├── 📊 messy_data.csv              # Source: raw e-commerce transactions
 │
 ├── 📄 clean_data_script.py        # Step 1: Clean messy_data.csv → clean_data.xlsx
-├── 📄 build_dashboard.py          # Step 2: Build Excel data source (dashboard_data_source.xlsx)
-├── 📄 app.py                      # Streamlit web app (interactive version)
+├── 📄 build_dashboard.py          # Step 2: Build Excel deliverable (dashboard.xlsx)
+├── 📄 app.py                      # Step 3: Streamlit web app (interactive version)
 │
-├── 🔧 clean_data.xlsx             # Generated intermediate (kept for reference)
+├── 🔧 clean_data.xlsx             # Generated intermediate (ignored by Git)
+├── 🏆 dashboard.xlsx              # Final polished Excel dashboard (tracked)
 │
-└── 🏆 dashboard.xlsx              # Final polished Excel dashboard (showcase)
+└── screenshots/
+    ├── excel/                     # Excel dashboard + before/after cleaning shots
+    └── webapp/                    # Streamlit web app screenshots
+```
+
+`clean_data.xlsx` is fully regenerable from `clean_data_script.py` and is **not** tracked in Git. `dashboard.xlsx` is tracked because it's a deliverable, not an intermediate.
+
+---
+
+## 🧾 License
+
+Released under the MIT License — see [LICENSE](LICENSE).
+
+---
+
+## 👤 Author
+
+**Mashhud Farah** — [github.com/MashhudFarah](https://github.com/MashhudFarah)
