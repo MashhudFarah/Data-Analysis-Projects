@@ -43,19 +43,19 @@ Run `streamlit run app.py` locally to explore the same insights in a web interfa
 
 | KPI Cards | Slicers |
 |---|---|
-| ![Excel KPI cards](screenshots/excel/01-kpi-cards.png) | ![Excel slicers](screenshots/excel/02-slicers.png) |
+| ![Excel KPI cards](screenshots/excel%20dashboard/01-kpi-cards.png) | ![Excel slicers](screenshots/excel%20dashboard/02-slicers.png) |
 
 | Monthly Revenue Trend | ROAS by Category |
 |---|---|
-| ![Excel monthly revenue trend](screenshots/excel/03-monthly-revenue-trend.png) | ![Excel ROAS by category](screenshots/excel/04-roas-by-category.png) |
+| ![Excel monthly revenue trend](screenshots/excel%20dashboard/03-monthly-revenue-trend.png) | ![Excel ROAS by category](screenshots/excel%20dashboard/04-roas-by-category.png) |
 
 | Revenue by Payment Method | Revenue by Country |
 |---|---|
-| ![Excel revenue by payment method](screenshots/excel/05-revenue-by-payment-method.png) | ![Excel revenue by country](screenshots/excel/06-revenue-by-country.png) |
+| ![Excel revenue by payment method](screenshots/excel%20dashboard/05-revenue-by-payment-method.png) | ![Excel revenue by country](screenshots/excel%20dashboard/06-revenue-by-country.png) |
 
 | Revenue by Category & Status |
 |---|
-| ![Excel revenue by category and status](screenshots/excel/07-revenue-by-category-status.png) |
+| ![Excel revenue by category and status](screenshots/excel%20dashboard/07-revenue-by-category-status.png) |
 
 ### Streamlit Web App
 
@@ -79,7 +79,7 @@ Run `streamlit run app.py` locally to explore the same insights in a web interfa
 
 | Before | After |
 |---|---|
-| ![Messy raw data](screenshots/excel/08-cleaning-before.png) | ![Cleaned data](screenshots/excel/09-cleaning-after.png) |
+| ![Messy raw data](screenshots/excel%20dashboard/08-cleaning-before.png) | ![Cleaned data](screenshots/excel%20dashboard/09-cleaning-after.png) |
 
 ---
 
