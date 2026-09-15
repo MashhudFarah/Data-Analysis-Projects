@@ -39,7 +39,7 @@ Run `streamlit run app.py` locally to explore the same insights in a web interfa
 
 *Excel Dashboard:*
 
-<img width="1269" height="345" alt="Screenshot_2026-09-09_11-11-52" src="https://github.com/user-attachments/assets/157052c6-5a6c-44dc-9d83-1e5bcc269054" />
+Screenshots/Screenshot_2026-09-09_11-11-52.png
 <img width="1295" height="356" alt="Screenshot_2026-09-09_11-12-21" src="https://github.com/user-attachments/assets/9725c97a-3295-4523-903f-47f187491d28" />
 <img width="1302" height="411" alt="Screenshot_2026-09-09_11-12-40" src="https://github.com/user-attachments/assets/bf2b3ef8-e715-4c02-865a-a43230251526" />
 <img width="1249" height="383" alt="Screenshot_2026-09-09_11-12-59" src="https://github.com/user-attachments/assets/719a5564-26c2-4675-9352-11bdab628b0f" />
